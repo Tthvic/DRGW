@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the DRGW paper below."
+type: software
+title: "DRGW: an implementation of disentangled graph watermarking"
+authors:
+  - family-names: Li
+    given-names: Jiasen
+    orcid: "https://orcid.org/0009-0004-6883-0972"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "DRGW: Learning Disentangled Representations for Robust Graph Watermarking"
+  authors:
+    - family-names: Li
+      given-names: Jiasen
+      orcid: "https://orcid.org/0009-0004-6883-0972"
+    - family-names: Liu
+      given-names: Yanwei
+      orcid: "https://orcid.org/0000-0002-0626-1901"
+    - family-names: Shang
+      given-names: Zhuoyi
+      orcid: "https://orcid.org/0009-0004-4596-373X"
+    - family-names: Gu
+      given-names: Xiaoyan
+      orcid: "https://orcid.org/0000-0003-0673-0058"
+    - family-names: Wang
+      given-names: Weiping
+      orcid: "https://orcid.org/0000-0002-8618-4992"
+  collection-title: "Proceedings of the ACM Web Conference 2026"
+  year: 2026
+  month: 4
+  start: 3263
+  end: 3274
+  doi: "10.1145/3774904.3792543"
+  url: "https://doi.org/10.1145/3774904.3792543"

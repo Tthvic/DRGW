@@ -1,0 +1,52 @@
+name: smoke
+output_dir: results/smoke
+model:
+  kind: drgw
+  hidden_dim: 32
+  watermark_dim: 16
+  gin_layers: 2
+  flow_layers: 2
+  nonedge_ratio: 1.0
+data:
+  data_dir: data
+  datasets: [Facebook]
+  seed: 2026
+  splits:
+    train: {num_nodes: 32, num_graphs: 8}
+    val: {num_nodes: 64, num_graphs: 8}
+    test: {num_nodes: 64, num_graphs: 8}
+training:
+  stage1_steps: 5
+  stage2_steps: 5
+  stage3_steps: 5
+  naive_steps: 15
+  batch_size: 4
+  lr: 0.001
+  min_lr: 0.00001
+  weight_decay: 0.0001
+  gradient_clip: 5.0
+  alpha: 0.1
+  edit_budget: 2
+  augmentation_rate: 0.1
+  robustness_rates: [0.1, 0.3, 0.5]
+  robust_control_variate: true
+  feature_weight: 1.0
+  variance_weight: 1.0
+  orthogonality_weight: 0.1
+  nll_weight: 5.0
+  cycle_weight: 10.0
+  stage3_aux_weight: 0.1
+  log_every: 1
+  checkpoint_every: 5
+evaluation:
+  budget_ratios: [0.001, 0.01]
+  alpha: 0.1
+  keys: 2
+  key_seed: 104729
+  batch_size: 4
+  target_fpr: 0.01
+  attacks:
+    - {name: clean, rate: 0.0}
+    - {name: edge_flip, rate: 0.1}
+    - {name: node_delete, rate: 0.3}
+    - {name: node_permute, rate: 1.0}

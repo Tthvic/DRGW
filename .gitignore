@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+data/
+results/
+*.pt
+*.pth
+*.log
+.DS_Store
+
+# Local experiment and model artifacts
+pretrained/
+checkpoints/
+docs/results/
+*.npy
+*.npz
+*.jsonl

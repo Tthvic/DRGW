@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drgw"
+version = "0.1.0"
+description = "Disentangled representations for graph watermarking"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Jiasen Li"}]
+dependencies = ["torch>=2.2", "numpy>=1.24", "scipy>=1.11", "PyYAML>=6", "tqdm>=4.66"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+plots = ["matplotlib>=3.8"]
+
+[project.urls]
+Repository = "https://github.com/Tthvic/DRGW"
+Paper = "https://doi.org/10.1145/3774904.3792543"
+
+[project.scripts]
+drgw = "drgw.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

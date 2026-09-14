@@ -1,0 +1,58 @@
+name: main
+output_dir: results/main
+model:
+  kind: drgw
+  hidden_dim: 256
+  watermark_dim: 128
+  gin_layers: 4
+  flow_layers: 8
+  nonedge_ratio: 1.0
+data:
+  data_dir: data
+  datasets: [Facebook, DBLP, YAGO3-10, Amazon, web-Stanford, roadNet-TX]
+  seed: 2026
+  splits:
+    train: {num_nodes: 128, num_graphs: 128}
+    val: {num_nodes: 512, num_graphs: 32}
+    test: {num_nodes: 512, num_graphs: 32}
+training:
+  # Units are optimizer updates, not whole-dataset epochs.
+  stage1_steps: 1000
+  stage2_steps: 2000
+  stage3_steps: 3000
+  naive_steps: 6000
+  batch_size: 32
+  lr: 0.001
+  min_lr: 0.00001
+  weight_decay: 0.0001
+  gradient_clip: 5.0
+  alpha: 0.1
+  edit_budget: 2
+  augmentation_rate: 0.1
+  robustness_rates: [0.1, 0.3, 0.5]
+  robust_control_variate: true
+  feature_weight: 1.0
+  variance_weight: 1.0
+  orthogonality_weight: 0.1
+  nll_weight: 5.0
+  cycle_weight: 10.0
+  stage3_aux_weight: 0.1
+  log_every: 50
+  checkpoint_every: 500
+evaluation:
+  # Report each budget separately, including zero-edit cases.
+  budget_ratios: [0.001, 0.01]
+  alpha: 0.1
+  keys: 4
+  key_seed: 104729
+  batch_size: 4
+  target_fpr: 0.01
+  attacks:
+    - {name: clean, rate: 0.0}
+    - {name: edge_flip, rate: 0.1}
+    - {name: edge_flip, rate: 0.3}
+    - {name: edge_flip, rate: 0.5}
+    - {name: node_delete, rate: 0.1}
+    - {name: node_delete, rate: 0.3}
+    - {name: node_delete, rate: 0.5}
+    - {name: node_permute, rate: 1.0}
