@@ -3,32 +3,8 @@
 The detector needs the trained checkpoint, the candidate graph and the owner's
 watermark vector. It does not need the original graph or source node IDs.
 
-## Hardware and installation
-
-Training and inference support CPU and NVIDIA CUDA GPUs. Data downloads,
-SciPy graph preprocessing, subgraph sampling, and statistical metric aggregation
-use CPU. When running sparse inference on a GPU, candidate-pair sampling remains
-on CPU and the graph network runs on the selected GPU.
-
-The README gives the GPU installation path. For a CPU environment, create the
-same Python environment and replace its PyTorch installation command with:
-
-```bash
-python -m pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -e .
-```
-
-Use `--device cpu` with `train`, `evaluate`, `embed` and `verify`. GPU commands
-use `--device cuda:0` (or another CUDA device index). CPU execution is useful
-for tests and small examples; GPU training is recommended for the main setup.
-Check GPU availability after installation with:
-
-```bash
-python -c "import torch; print(torch.cuda.is_available())"
-```
-
-CUDA packages require a compatible NVIDIA driver. Other supported builds are
-listed in the [official installation instructions](https://pytorch.org/get-started/previous-versions/).
+The examples use `--device cuda:0`. Select another CUDA index or use
+`--device cpu` as needed.
 
 ## Input format
 

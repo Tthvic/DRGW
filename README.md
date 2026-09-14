@@ -20,9 +20,7 @@ uses the candidate graph and the owner's watermark, without the original graph.
 
 ## Installation
 
-We recommend an NVIDIA CUDA GPU for training. The commands below set up
-Python 3.12 and PyTorch 2.13 with CUDA 13.0 on Linux. For other CUDA versions,
-choose the matching build from the [PyTorch installation guide](https://pytorch.org/get-started/previous-versions/).
+Use Python 3.12 with a compatible [PyTorch build](https://pytorch.org/get-started/previous-versions/).
 
 ```bash
 git clone https://github.com/Tthvic/DRGW.git
@@ -32,10 +30,6 @@ conda activate drgw
 python -m pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu130
 python -m pip install -e .
 ```
-
-Data preparation and statistical metrics run on CPU. Model training, embedding
-and verification run on the device selected with `--device`. The examples below
-use `cuda:0`; [CPU setup](docs/usage.md#hardware-and-installation) is also supported.
 
 ## Quick Start
 
@@ -78,7 +72,7 @@ examples and verification-score calibration.
 | --- | --- |
 | Encoder, invertible network and edge editor | [Method](docs/method.md) |
 | Data sampling, training, attacks and metrics | [Experiment protocol](docs/protocol.md) |
-| Input formats, CPU setup and sparse inference | [Usage](docs/usage.md) |
+| Input formats, verification and sparse inference | [Usage](docs/usage.md) |
 | Multiple seeds, baseline and utility evaluation | [Experiment commands](docs/usage.md#experiment-commands) |
 
 ## Citation
