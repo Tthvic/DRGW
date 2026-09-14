@@ -3,8 +3,6 @@
 Code for **[DRGW: Learning Disentangled Representations for Robust Graph
 Watermarking](https://doi.org/10.1145/3774904.3792543)** (WWW 2026).
 
-Jiasen Li, Yanwei Liu, Zhuoyi Shang, Xiaoyan Gu, Weiping Wang
-
 [Paper](https://doi.org/10.1145/3774904.3792543) | [PDF](https://arxiv.org/pdf/2601.13569) | [arXiv](https://arxiv.org/abs/2601.13569) | [BibTeX](#citation)
 
 DRGW combines a disentangled GIN encoder, a graph-aware invertible network,
