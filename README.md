@@ -88,7 +88,7 @@ If you use this work, please cite:
 ```bibtex
 @inproceedings{li2026drgw,
   title     = {DRGW: Learning Disentangled Representations for Robust Graph Watermarking},
-  author    = {Li, Jiasen and Liu, Yanwei and Shang, Zhuoyi and Gu, Xiaoyan and Wang, Weiping},
+  author    = {Jiasen Li and Yanwei Liu and Zhuoyi Shang and Xiaoyan Gu and Weiping Wang},
   booktitle = {Proceedings of the ACM Web Conference 2026},
   pages     = {3263--3274},
   year      = {2026},
